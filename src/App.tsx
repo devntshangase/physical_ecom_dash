@@ -1,9 +1,15 @@
-
+import Header from "./components/Header"
+import SIdebar from "./components/SIdebar"
 
 function App() {
 
   return (
-    <div className="bg-amber-500">The physical ting</div>
+    <div className="">
+      <Header />
+      <div className="">
+        <SIdebar />
+      </div>
+    </div>
   )
 }
 
