@@ -9,7 +9,7 @@ function DashboardLayout() {
       <Header />
       <div className="flex p-4 gap-4">
         <Sidebar />
-        <div className="">
+        <div className="flex w-full">
             <Outlet />
         </div>
       </div>
