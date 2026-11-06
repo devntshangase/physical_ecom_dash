@@ -26,15 +26,21 @@ function Home() {
       </div>
       <div className="flex gap-4">
         <div className="bg-white rounded-xl">
-          <div className="border-b border-gray-300 p-2">Recent Orders</div>
-          <div className="flex gap-4 p-2">
+          <div className="p-2">Recent Orders</div>
+          <div className="flex gap-4 p-2 border-t border-gray-300 hover:bg-gray-100">
             <div className="">#1002</div>
             <div className="">Priya Nair</div>
             <div className="">Cancelled</div>
             <div className="">$102.00</div>
           </div>
         </div>
-        <div className="">Inventory Alerts</div>
+        <div className="bg-white rounded-xl flex-1">
+          <div className="p-2">Inventory Alerts</div>
+          <div className="flex flex-col p-2 border-t border-gray-300 ">
+            <p>Walnut desk shelf</p>
+            <p>Out of stock</p>
+          </div>
+        </div>
       </div>
     </div>
   )
