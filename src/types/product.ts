@@ -1,10 +1,15 @@
+export type ProductStatus = "active" | "archived";
+
 export interface Product {
     id : number;
     title: string;
-    desc: string;
+    description: string;
     price: number;
     stock: number;
-    type: string;
+    category: string;
     vendor: string;
-    status: 'active' | 'archived'
+    image: string[]
+    status: ProductStatus;
+    createdAt: string;
+    updatedAt: string;
 }
