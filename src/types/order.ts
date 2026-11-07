@@ -3,8 +3,13 @@ export interface Order {
     date: string;
     customer: string;
     email: string;
-    items: [{pid: number, qty: number}];
+    items: Item[];
     paid: "Paid" | "Cancelled" | "Payment pending";
     fulfilled: boolean;
     cancelled: boolean
+}
+
+export interface Item {
+    pid: number,
+    qty: number
 }
