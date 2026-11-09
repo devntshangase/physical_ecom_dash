@@ -8,7 +8,7 @@ export interface Product {
     stock: number;
     category: string;
     vendor: string;
-    image: string[]
+    images: string[]
     status: ProductStatus;
     createdAt: string;
     updatedAt: string;
