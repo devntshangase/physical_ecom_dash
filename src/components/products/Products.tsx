@@ -1,6 +1,19 @@
 import React from 'react'
 
 function Products() {
+  const {addProduct} = useProductStore()
+  const handleAddProduct = () =>{
+    addProduct({
+            title: "Wireless Headphones",
+            description: "Bluetooth headphones",
+            price: 1299.99,
+            stock: 20,
+            category: "Electronics",
+            vendor: "TechStore",
+            images: ["/images/headphones.jpg"],
+            status: "active"
+    })
+  }
   return (
     <div className='flex flex-col flex-1'>
       <div className="flex justify-between p-2">
