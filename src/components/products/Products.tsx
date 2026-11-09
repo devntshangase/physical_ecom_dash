@@ -1,6 +1,8 @@
 import {useMemo, useState} from 'react'
 import { useProductStore } from '../../store/productStore'
 import ProductItem from './ProductItem'
+import { productFields } from '../../utils/searchFields'
+import { useSearch } from '../../hooks/useSearch'
 
 type Tab = 'all' | 'active' | 'draft' | 'archived'
 type SortKey = 'inventory' | 'title' | 'price'
@@ -19,7 +21,7 @@ function Products() {
   const addProduct = useProductStore((s) => s.addProduct)
 
   const [tab, setTab] = useState<Tab>('all')
-  const [query, setQuery] = useState('')
+  // const [query, setQuery] = useState('')
   const [sort, setSort] = useState<SortKey>('inventory')
 
   const counts = useMemo(() => {
@@ -43,37 +45,31 @@ function Products() {
     })
   }
 
-  const visibleProducts = useMemo(() => {
-      const q = query.trim().toLowerCase()
+  const tabProducts = useMemo(
+    () => (tab === 'all' ? products : products.filter((p) => p.status === tab)),
+    [products, tab]
+  )
 
-      return products
-        .filter((p) => tab === 'all' || p.status === tab)
-        .filter(
-          (p) =>
-            !q ||
-            p.title.toLowerCase().includes(q) ||
-            p.vendor.toLowerCase().includes(q) ||
-            p.category.toLowerCase().includes(q)
-        )
-        .sort((a, b) => {
-          switch (sort) {
-            case 'title':
-              return a.title.localeCompare(b.title)
-            case 'price':
-              return a.price - b.price
-            case 'inventory':
-            default:
-              return b.stock - a.stock
-          }
-        })
-    }, [products, tab, query, sort])
+  const { query, setQuery, results } = useSearch(tabProducts, productFields)
 
-    const emptyMessage =
-      products.length === 0
-        ? 'No products yet. Add your first product.'
-        : 'No products match. Try a different search or tab.'
+  const visibleProducts = useMemo(
+    () =>
+      [...results].sort((a, b) => {
+        switch (sort) {
+          case 'title': return a.title.localeCompare(b.title)
+          case 'price': return a.price - b.price
+          default: return b.stock - a.stock
+        }
+      }),
+    [results, sort]
+  )
 
-    const tableHeaderStyles = 'text-start font-semibold text-sm text-gray-500 py-2'
+  const emptyMessage =
+    products.length === 0
+      ? 'No products yet. Add your first product.'
+      : 'No products match. Try a different search or tab.'
+
+  const tableHeaderStyles = 'text-start font-semibold text-sm text-gray-500 py-2'
 
   return (
     <div className='flex flex-col flex-1'>
