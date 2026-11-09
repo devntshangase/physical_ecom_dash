@@ -49,9 +49,9 @@ function Products() {
 
           <div className="flex">
             <select className="rounded-lg border border-gray-300 px-2" name="sort" id="sort">
-              <option value="">Sort: Inventory</option>
-              <option value="saab">Sort: Title</option>
-              <option value="mercedes">Sort: Price</option>
+              <option value="inventory">Sort: Inventory</option>
+              <option value="title">Sort: Title</option>
+              <option value="price">Sort: Price</option>
             </select>
           </div>
         </div>
