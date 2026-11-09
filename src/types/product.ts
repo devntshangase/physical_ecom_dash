@@ -1,4 +1,4 @@
-export type ProductStatus = "active" | "archived";
+export type ProductStatus = "active" | "archived" | "draft";
 
 export interface Product {
     id : number;
