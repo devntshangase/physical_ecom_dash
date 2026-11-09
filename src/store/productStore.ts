@@ -15,6 +15,71 @@ interface ProductStore {
 
 export const useProductStore = create<ProductStore>((set, get) => ({
     products: [],
+    // products: [{
+    //     id: 1,
+    //     title: "Wireless Headphones",
+    //     description: "Bluetooth headphones",
+    //     price: 1299.99,
+    //     stock: 20,
+    //     category: "Electronics",
+    //     vendor: "TechStore",
+    //     images: ["/images/headphones.jpg"],
+    //     status: "active",
+    //     createdAt: "2026-11-01T10:00:00.000Z",
+    //     updatedAt: "2026-11-01T10:00:00.000Z"
+    // },
+    // {
+    //     id: 2,
+    //     title: "Smart Watch",
+    //     description: "Fitness tracking smartwatch with heart rate monitor",
+    //     price: 1899.99,
+    //     stock: 15,
+    //     category: "Electronics",
+    //     vendor: "GadgetHub",
+    //     images: ["/images/smartwatch.jpg"],
+    //     status: "active",
+    //     createdAt: "2026-11-02T10:00:00.000Z",
+    //     updatedAt: "2026-11-02T10:00:00.000Z"
+    // },
+    // {
+    //     id: 3,
+    //     title: "Gaming Mouse",
+    //     description: "Ergonomic RGB gaming mouse with adjustable DPI",
+    //     price: 599.99,
+    //     stock: 30,
+    //     category: "Electronics",
+    //     vendor: "TechStore",
+    //     images: ["/images/gaming-mouse.jpg"],
+    //     status: "active",
+    //     createdAt: "2026-11-03T10:00:00.000Z",
+    //     updatedAt: "2026-11-03T10:00:00.000Z"
+    // },
+    // {
+    //     id: 4,
+    //     title: "Laptop Backpack",
+    //     description: "Water-resistant backpack with a padded laptop compartment",
+    //     price: 799.99,
+    //     stock: 25,
+    //     category: "Accessories",
+    //     vendor: "BagWorld",
+    //     images: ["/images/backpack.jpg"],
+    //     status: "active",
+    //     createdAt: "2026-11-04T10:00:00.000Z",
+    //     updatedAt: "2026-11-04T10:00:00.000Z"
+    // },
+    // {
+    //     id: 5,
+    //     title: "Mechanical Keyboard",
+    //     description: "RGB mechanical keyboard with responsive switches",
+    //     price: 1499.99,
+    //     stock: 12,
+    //     category: "Electronics",
+    //     vendor: "GadgetHub",
+    //     images: ["/images/keyboard.jpg"],
+    //     status: "active",
+    //     createdAt: "2026-11-05T10:00:00.000Z",
+    //     updatedAt: "2026-11-05T10:00:00.000Z"
+    // }],
 
     addProduct: (product) => set((state) => ({
         products: [
