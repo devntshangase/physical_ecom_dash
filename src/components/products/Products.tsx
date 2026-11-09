@@ -1,4 +1,6 @@
 import React from 'react'
+import { useProductStore } from '../../store/productStore'
+import type { Product } from '../../types/product'
 
 function Products() {
   const {addProduct} = useProductStore()
@@ -16,9 +18,16 @@ function Products() {
   }
   return (
     <div className='flex flex-col flex-1'>
-      <div className="flex justify-between p-2">
-       <div>Products</div>
-       <div className=""><button>Add Product</button></div>
+      <div className="flex justify-between p-2 items-center">
+       <div className='font-bold text-lg'>Products</div>
+       <div className="">
+        <button 
+          className='bg-black text-white px-2 py-1 rounded-lg font-semibold'
+          onClick={handleAddProduct}
+        >
+          Add Product
+        </button>
+      </div>
       </div>
 
       <div className="bg-white border border-gray-300 rounded-xl py-2">
