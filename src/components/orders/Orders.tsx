@@ -3,9 +3,10 @@ import React from 'react'
 function Orders() {
   return (
     <div className='flex flex-col flex-1'>
-      <div className="flex justify-between p-2">
-       <div>Orders</div>
-       <div className=""><button>Create Order</button></div>
+      <div className="flex justify-between p-2 items-center">
+       <div className='font-bold text-lg'>Orders</div>
+       <div className="">
+        <button className='bg-black text-white px-2 py-1 rounded-lg font-semibold'>Create Order</button></div>
       </div>
 
       <div className="bg-white border border-gray-300 rounded-xl py-2">
