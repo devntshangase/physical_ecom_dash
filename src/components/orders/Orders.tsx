@@ -1,4 +1,4 @@
-import React,{useEffect, useState, useMemo} from 'react'
+import {useState, useMemo} from 'react'
 import { useOrderStore } from '../../store/orderStore';
 import OrderItem from './OrderItem';
 import { orderFields } from '../../utils/searchFields';
@@ -47,10 +47,6 @@ function Orders() {
   )
 
   const { query, setQuery, results } = useSearch(tabOrders, orderFields)
-
-  useEffect(()=>{
-      console.log(orders)
-  },[orders])
 
   const handleCreateOrder = () => {
     addOrder({
