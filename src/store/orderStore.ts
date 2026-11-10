@@ -22,7 +22,72 @@ interface OrderStore {
 }
 
 export const useOrderStore = create<OrderStore>((set, get) => ({
-    orders: [],
+    orders: [  {
+    id: 1,
+    createdAt: '2026-11-01T09:15:00.000Z',
+    updatedAt: '2026-11-01T09:15:00.000Z',
+    customer: 'John Doe',
+    email: 'john@example.com',
+    items: [{ pid: 101, qty: 2, price: 1299.99 }],
+    total: 2599.98,
+    currency: 'ZAR',
+    paymentStatus: 'Pending',
+    status: 'Pending',
+  },
+  {
+    id: 2,
+    createdAt: '2026-11-03T13:40:00.000Z',
+    updatedAt: '2026-11-04T08:00:00.000Z',
+    customer: 'Thandi Nkosi',
+    email: 'thandi.nkosi@example.co.za',
+    items: [
+      { pid: 102, qty: 1, price: 849.5 },
+      { pid: 103, qty: 3, price: 149.99 },
+    ],
+    total: 1299.47,
+    currency: 'ZAR',
+    paymentStatus: 'Paid',
+    status: 'Processing',
+  },
+  {
+    id: 3,
+    createdAt: '2026-10-28T16:20:00.000Z',
+    updatedAt: '2026-11-02T10:30:00.000Z',
+    customer: 'Sarah Miller',
+    email: 'sarah.miller@example.com',
+    items: [
+      { pid: 105, qty: 1, price: 249 },
+      { pid: 106, qty: 2, price: 35.5 },
+    ],
+    total: 320,
+    currency: 'USD',
+    paymentStatus: 'Paid',
+    status: 'Fulfilled',
+  },
+  {
+    id: 4,
+    createdAt: '2026-10-30T11:05:00.000Z',
+    updatedAt: '2026-10-31T09:00:00.000Z',
+    customer: 'Pieter van der Merwe',
+    email: 'pieter.vdm@example.co.za',
+    items: [{ pid: 103, qty: 5, price: 149.99 }],
+    total: 749.95,
+    currency: 'ZAR',
+    paymentStatus: 'Failed',
+    status: 'Cancelled',
+  },
+  {
+    id: 5,
+    createdAt: '2026-10-25T07:50:00.000Z',
+    updatedAt: '2026-11-05T14:10:00.000Z',
+    customer: 'Luca Rossi',
+    email: 'luca.rossi@example.eu',
+    items: [{ pid: 102, qty: 1, price: 799 }],
+    total: 799,
+    currency: 'EUR',
+    paymentStatus: 'Refunded',
+    status: 'Fulfilled',
+  }],
 
     addOrder: (order) => set((state) => {
         const now = new Date().toISOString();
