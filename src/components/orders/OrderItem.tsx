@@ -1,4 +1,4 @@
-import React from 'react'
+import {memo} from 'react'
 import type { Order } from '../../types/order'
 import { formatDate } from '../../utils/dateFormat'
 
@@ -11,7 +11,7 @@ const priceFormatter = new Intl.NumberFormat(undefined, {
   currency: 'ZAR',
 })
 
-function OrderItem({order}: OrderItemProps) {
+const OrderItem = memo(function ProductItem({order}: OrderItemProps) {
   return (
     <tr className='hover:bg-gray-200 border-t border-gray-300'>
         <td className='font-semibold px-4 py-2 text-sm'>#{order.id}</td>
@@ -23,6 +23,6 @@ function OrderItem({order}: OrderItemProps) {
         <td className='text-sm'>{priceFormatter.format(order.total)}</td>
     </tr>
   )
-}
+})
 
 export default OrderItem
